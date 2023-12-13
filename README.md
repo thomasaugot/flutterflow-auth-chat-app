@@ -1,2 +1,7 @@
-# flutterflow-auth-chat-app
-Learning Flutterflow by building my first native chat app
+# FlutterTalks
+
+A new Flutter project.
+
+## Getting Started
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.
