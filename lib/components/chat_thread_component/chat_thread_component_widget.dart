@@ -235,8 +235,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 2.0,
                                     buttonSize: 40.0,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    fillColor: const Color(0xE1FFFFFF),
                                     icon: Icon(
                                       Icons.delete_outline_rounded,
                                       color: FlutterFlowTheme.of(context).error,
@@ -281,8 +280,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                             borderRadius: 60.0,
                             borderWidth: 1.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            fillColor: const Color(0xE1FFFFFF),
                             icon: const Icon(
                               Icons.add_rounded,
                               color: Color(0xFF090140),
@@ -460,7 +458,10 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText: 'Start typing here...',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'bo7jp08j' /* Start typing here... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelSmall,
                                         errorStyle: FlutterFlowTheme.of(context)
@@ -518,13 +519,23 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                         ),
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .primaryText,
                                         contentPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 16.0, 16.0, 56.0, 16.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            color: const Color(0xFF232327),
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
                                       maxLines: 12,
                                       minLines: 1,
                                       cursorColor:

@@ -128,10 +128,9 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 60.0,
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.arrow_back_ios_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                      color: Color(0xE1FFFFFF),
                                       size: 30.0,
                                     ),
                                     onPressed: () async {
@@ -192,9 +191,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmallFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                              color: const Color(0xE1FFFFFF),
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
@@ -220,8 +217,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .labelLargeFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                            color: const Color(0xFFA4A3AD),
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
@@ -240,13 +236,14 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                       child: Text(
-                        'Your Account',
+                        FFLocalizations.of(context).getText(
+                          '395luf9g' /* Your Account */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .labelMediumFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  color: const Color(0xFFA4A3AD),
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .labelMediumFamily),
@@ -268,12 +265,11 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                           width: double.infinity,
                           height: 60.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: const Color(0xE1FFFFFF),
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
-                                color: Color(0x33000000),
+                                color: Color(0x00FFFFFF),
                                 offset: Offset(0.0, 1.0),
                               )
                             ],
@@ -300,7 +296,9 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Edit Profile',
+                                    FFLocalizations.of(context).getText(
+                                      'efr5o1dj' /* Edit Profile */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).labelLarge,
                                   ),
@@ -326,13 +324,14 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                       child: Text(
-                        'App Settings',
+                        FFLocalizations.of(context).getText(
+                          'a4li9yza' /* App Settings */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .labelMediumFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  color: const Color(0xFFA4A3AD),
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .labelMediumFamily),
@@ -346,8 +345,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: const Color(0xE1FFFFFF),
                           boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
@@ -378,7 +376,9 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Support',
+                                  FFLocalizations.of(context).getText(
+                                    'ren1fqjg' /* Support */,
+                                  ),
                                   style:
                                       FlutterFlowTheme.of(context).labelLarge,
                                 ),
@@ -406,8 +406,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: const Color(0xE1FFFFFF),
                           boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
@@ -438,7 +437,9 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Terms of Service',
+                                  FFLocalizations.of(context).getText(
+                                    'jlq6fvtp' /* Terms of Service */,
+                                  ),
                                   style:
                                       FlutterFlowTheme.of(context).labelLarge,
                                 ),
@@ -472,7 +473,9 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
 
                             context.goNamedAuth('auth_Signup', context.mounted);
                           },
-                          text: 'Log Out',
+                          text: FFLocalizations.of(context).getText(
+                            '1zcyll3a' /* Log Out */,
+                          ),
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 44.0,
@@ -480,8 +483,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context).bodyLarge,
                             elevation: 0.0,
                             borderSide: BorderSide(

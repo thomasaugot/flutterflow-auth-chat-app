@@ -9,7 +9,6 @@ import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
@@ -86,7 +85,10 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       locale: _locale,
-      supportedLocales: const [Locale('en', '')],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('es'),
+      ],
       theme: ThemeData(
         brightness: Brightness.light,
         scrollbarTheme: const ScrollbarThemeData(),
@@ -140,26 +142,30 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: const Color(0xC57F77B4),
-        selectedItemColor: FlutterFlowTheme.of(context).primaryBackground,
-        unselectedItemColor: const Color(0x8A000000),
+        selectedItemColor: FlutterFlowTheme.of(context).info,
+        unselectedItemColor: FlutterFlowTheme.of(context).primaryBackground,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(
+            icon: const Icon(
               Icons.person,
               size: 34.0,
             ),
-            label: 'Profile',
+            label: FFLocalizations.of(context).getText(
+              '3ezofvot' /* Profile */,
+            ),
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
+            icon: const Icon(
               Icons.forum_outlined,
               size: 34.0,
             ),
-            label: '__',
+            label: FFLocalizations.of(context).getText(
+              'pifdcezb' /* __ */,
+            ),
             tooltip: '',
           )
         ],

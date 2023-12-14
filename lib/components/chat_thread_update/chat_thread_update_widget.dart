@@ -163,8 +163,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                            color: const Color(0xE1FFFFFF),
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
@@ -173,8 +172,14 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                     )),
                                     Text(
                                       valueOrDefault<String>(
-                                        dateTimeFormat('relative',
-                                            widget.chatMessagesRef?.timestamp),
+                                        dateTimeFormat(
+                                          'relative',
+                                          widget.chatMessagesRef?.timestamp,
+                                          locale: FFLocalizations.of(context)
+                                                  .languageShortCode ??
+                                              FFLocalizations.of(context)
+                                                  .languageCode,
+                                        ),
                                         '--',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -183,8 +188,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .labelSmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                            color: const Color(0xFFA4A3AD),
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
@@ -196,8 +200,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  color: const Color(0xE1FFFFFF),
                                   boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 3.0,
@@ -236,6 +239,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmallFamily,
+                                              color: const Color(0xFF232327),
                                               useGoogleFonts:
                                                   GoogleFonts.asMap()
                                                       .containsKey(
@@ -332,20 +336,20 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          AuthUserStreamWidget(
-                            builder: (context) => SelectionArea(
+                    Align(
+                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            SelectionArea(
                                 child: AutoSizeText(
-                              valueOrDefault<String>(
-                                currentUserDisplayName,
-                                'me',
+                              FFLocalizations.of(context).getText(
+                                'xlgar6ld' /* Me  */,
                               ),
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
@@ -353,47 +357,51 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleSmallFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color: const Color(0xE1FFFFFF),
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleSmallFamily),
                                   ),
                             )),
-                          ),
-                          Text(
-                            valueOrDefault<String>(
-                              dateTimeFormat('relative',
-                                  widget.chatMessagesRef?.timestamp),
-                              '--',
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .labelSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
+                            Text(
+                              valueOrDefault<String>(
+                                dateTimeFormat(
+                                  'relative',
+                                  widget.chatMessagesRef?.timestamp,
+                                  locale: FFLocalizations.of(context)
+                                          .languageShortCode ??
+                                      FFLocalizations.of(context).languageCode,
                                 ),
-                          ),
-                        ].divide(const SizedBox(width: 4.0)),
+                                '--',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .labelSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
+                                    color: const Color(0xFFA4A3AD),
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .labelSmallFamily),
+                                  ),
+                            ),
+                          ].divide(const SizedBox(width: 4.0)),
+                        ),
                       ),
                     ),
                     Container(
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        boxShadow: const [
+                      decoration: const BoxDecoration(
+                        color: Color(0xE1FFFFFF),
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
                             offset: Offset(0.0, 1.0),
                           )
                         ],
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(12.0),
                           bottomRight: Radius.circular(0.0),
                           topLeft: Radius.circular(12.0),
@@ -413,7 +421,18 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                 widget.chatMessagesRef?.text,
                                 '--',
                               ),
-                              style: FlutterFlowTheme.of(context).bodySmall,
+                              textAlign: TextAlign.start,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
+                                    color: const Color(0xFF232327),
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
+                                  ),
                             )),
                             if (widget.chatMessagesRef?.image != null &&
                                 widget.chatMessagesRef?.image != '')

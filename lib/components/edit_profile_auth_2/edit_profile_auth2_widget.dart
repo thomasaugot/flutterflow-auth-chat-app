@@ -1,11 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +73,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
               widget.title,
               style: FlutterFlowTheme.of(context).displaySmall.override(
                     fontFamily: FlutterFlowTheme.of(context).displaySmallFamily,
-                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    color: const Color(0xE1FFFFFF),
                     useGoogleFonts: GoogleFonts.asMap().containsKey(
                         FlutterFlowTheme.of(context).displaySmallFamily),
                   ),
@@ -84,10 +82,12 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 0.0, 0.0),
             child: Text(
-              'Adjust the content below to update your profile.',
+              FFLocalizations.of(context).getText(
+                '7n4tx88y' /* Adjust the content below to up... */,
+              ),
               style: FlutterFlowTheme.of(context).labelLarge.override(
                     fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    color: const Color(0xFFA4A3AD),
                     useGoogleFonts: GoogleFonts.asMap().containsKey(
                         FlutterFlowTheme.of(context).labelLargeFamily),
                   ),
@@ -212,18 +212,19 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     }
                   }
                 },
-                text: 'Change Photo',
+                text: FFLocalizations.of(context).getText(
+                  'kj9ky4sb' /* Change Photo */,
+                ),
                 options: FFButtonOptions(
                   width: 130.0,
                   height: 40.0,
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium,
                   elevation: 1.0,
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).alternate,
+                  borderSide: const BorderSide(
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
@@ -242,8 +243,16 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                  hintText: 'Your full name...',
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                  hintText: FFLocalizations.of(context).getText(
+                    '28hy0ym7' /* Your full name... */,
+                  ),
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
+                        color: const Color(0xFFA4A3AD),
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelMediumFamily),
+                      ),
                   errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -280,52 +289,20 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   filled: true,
-                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  fillColor: const Color(0xE1FFFFFF),
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily:
+                          FlutterFlowTheme.of(context).labelMediumFamily,
+                      color: const Color(0xFF161618),
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).labelMediumFamily),
+                    ),
                 cursorColor: FlutterFlowTheme.of(context).primary,
                 validator:
                     _model.yourNameControllerValidator.asValidator(context),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-            child: AuthUserStreamWidget(
-              builder: (context) => FlutterFlowDropDown<String>(
-                controller: _model.dropDownValueController ??=
-                    FormFieldController<String>(
-                  _model.dropDownValue ??=
-                      valueOrDefault(currentUserDocument?.role, ''),
-                ),
-                options: const [
-                  'Owner/Founder',
-                  'Director',
-                  'Manager',
-                  'Mid-Manager',
-                  'Employee'
-                ],
-                onChanged: (val) => setState(() => _model.dropDownValue = val),
-                width: double.infinity,
-                height: 44.0,
-                textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                hintText: 'Your Role',
-                icon: Icon(
-                  Icons.keyboard_arrow_down_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryText,
-                  size: 24.0,
-                ),
-                fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                elevation: 2.0,
-                borderColor: FlutterFlowTheme.of(context).alternate,
-                borderWidth: 2.0,
-                borderRadius: 8.0,
-                margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-                hidesUnderline: true,
-                isSearchable: false,
-                isMultiSelect: false,
               ),
             ),
           ),
@@ -340,7 +317,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 decoration: InputDecoration(
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
                   alignLabelWithHint: true,
-                  hintText: 'Tell us about yourself...',
+                  hintText: FFLocalizations.of(context).getText(
+                    '9zispj3n' /* Tell us about yourself... */,
+                  ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium,
                   errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily:
@@ -378,11 +357,16 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   filled: true,
-                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  fillColor: const Color(0xE1FFFFFF),
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                      color: const Color(0xFF14181B),
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
+                    ),
                 textAlign: TextAlign.start,
                 maxLines: 3,
                 cursorColor: FlutterFlowTheme.of(context).primary,
@@ -409,7 +393,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         : currentUserPhoto,
                     shortDescription: _model.myBioController.text,
                     lastActiveTime: getCurrentTimestamp,
-                    role: _model.dropDownValue,
                   ));
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(

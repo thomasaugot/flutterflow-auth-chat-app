@@ -85,9 +85,20 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Your Chats',
-                                style:
-                                    FlutterFlowTheme.of(context).displaySmall,
+                                FFLocalizations.of(context).getText(
+                                  'bjb0cp99' /* Your Chats */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displaySmallFamily,
+                                      color: const Color(0xE1FFFFFF),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily),
+                                    ),
                               ),
                             ),
                           ],
@@ -104,10 +115,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                   borderRadius: 12.0,
                                   borderWidth: 1.0,
                                   buttonSize: 48.0,
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.add_comment,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color: Color(0xE1FFFFFF),
                                     size: 34.0,
                                   ),
                                   onPressed: () async {
@@ -132,10 +142,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                 borderRadius: 20.0,
                                 borderWidth: 1.0,
                                 buttonSize: 54.0,
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.person,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  color: Color(0xE1FFFFFF),
                                   size: 40.0,
                                 ),
                                 onPressed: () async {
@@ -230,8 +239,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                      color: const Color(0xE1FFFFFF),
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 0.0,
@@ -464,9 +472,14 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                           0.0),
                                                                   child: Text(
                                                                     dateTimeFormat(
-                                                                        'relative',
-                                                                        listViewChatsRecord
-                                                                            .lastMessageTime!),
+                                                                      'relative',
+                                                                      listViewChatsRecord
+                                                                          .lastMessageTime!,
+                                                                      locale: FFLocalizations.of(context)
+                                                                              .languageShortCode ??
+                                                                          FFLocalizations.of(context)
+                                                                              .languageCode,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .start,
@@ -835,7 +848,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                               .start,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyLarge,
+                                                                          .headlineMedium,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -916,9 +929,12 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                     valueOrDefault<
                                                                         String>(
                                                                       dateTimeFormat(
-                                                                          'relative',
-                                                                          listViewChatsRecord
-                                                                              .lastMessageTime),
+                                                                        'relative',
+                                                                        listViewChatsRecord
+                                                                            .lastMessageTime,
+                                                                        locale: FFLocalizations.of(context).languageShortCode ??
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
                                                                       '--',
                                                                     ),
                                                                     textAlign:
@@ -929,12 +945,11 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                         .labelSmall,
                                                                   ),
                                                                 ),
-                                                                Icon(
+                                                                const Icon(
                                                                   Icons
                                                                       .chevron_right_rounded,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
+                                                                  color: Color(
+                                                                      0xFF090140),
                                                                   size: 24.0,
                                                                 ),
                                                               ].divide(const SizedBox(
@@ -993,7 +1008,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                               );
                             },
                             child: Text(
-                              'Log Out',
+                              FFLocalizations.of(context).getText(
+                                'vweu6jlp' /* Log Out */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(

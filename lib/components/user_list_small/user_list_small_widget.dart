@@ -59,12 +59,11 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
         duration: const Duration(milliseconds: 150),
         curve: Curves.easeInOut,
         decoration: BoxDecoration(
-          color: _model.iuserHovered? FlutterFlowTheme.of(context).primaryBackground
-              : FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.circular(12.0),
-          border: Border.all(
-            color: FlutterFlowTheme.of(context).alternate,
+          color: valueOrDefault<Color>(
+            _model.iuserHovered? const Color(0xE1FFFFFF) : const Color(0xFFA4A3AD),
+            const Color(0xFFA4A3AD),
           ),
+          borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
@@ -153,6 +152,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyMediumFamily,
+                              color: const Color(0xFF232327),
                               fontWeight: FontWeight.bold,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context)
@@ -164,7 +164,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                             const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
-                            widget.userRef?.role,
+                            widget.userRef?.email,
                             '--',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -200,7 +200,9 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: Text(
-                        'ME',
+                        FFLocalizations.of(context).getText(
+                          '0a2qspqt' /* ME */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),

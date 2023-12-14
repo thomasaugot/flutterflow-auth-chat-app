@@ -186,14 +186,15 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Get Started',
+                              FFLocalizations.of(context).getText(
+                                'xrq2j3eh' /* Get Started */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
                                     fontFamily: 'Acme',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color: const Color(0xE1FFFFFF),
                                     fontWeight: FontWeight.w600,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
@@ -205,15 +206,16 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
-                                'Create an account by using the form below.',
+                                FFLocalizations.of(context).getText(
+                                  '6wwrvnec' /* Create an account by using the... */,
+                                ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .labelLargeFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                      color: const Color(0xFFA4A3AD),
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
                                               FlutterFlowTheme.of(context)
@@ -233,21 +235,22 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   autofillHints: const [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Email',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'jzvd7m5d' /* Email */,
+                                    ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).labelLarge,
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                      borderSide: const BorderSide(
+                                        color: Color(0xE1FFFFFF),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                      borderSide: const BorderSide(
+                                        color: Color(0xFF090140),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
@@ -269,8 +272,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     filled: true,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    fillColor: const Color(0xE1FFFFFF),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -302,21 +304,22 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   autofillHints: const [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
-                                    labelText: 'Password',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'dlogllhg' /* Password */,
+                                    ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).labelLarge,
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                      borderSide: const BorderSide(
+                                        color: Color(0xE1FFFFFF),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                      borderSide: const BorderSide(
+                                        color: Color(0xC5090140),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(12.0),
@@ -338,8 +341,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     filled: true,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    fillColor: const Color(0xE1FFFFFF),
                                     suffixIcon: InkWell(
                                       onTap: () => setState(
                                         () => _model.passwordVisibility =
@@ -384,7 +386,9 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   context.goNamedAuth(
                                       'auth_CreateProfile', context.mounted);
                                 },
-                                text: 'Create Account',
+                                text: FFLocalizations.of(context).getText(
+                                  'vsg6biz0' /* Create Account */,
+                                ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 44.0,
@@ -418,14 +422,15 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
-                                  'Or sign up with',
+                                  FFLocalizations.of(context).getText(
+                                    '7acf55t2' /* Or sign up with */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                        color: const Color(0xFFA4A3AD),
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
                                                 FlutterFlowTheme.of(context)
@@ -449,7 +454,9 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   context.goNamedAuth(
                                       'chat_2_main', context.mounted);
                                 },
-                                text: 'Continue with Google',
+                                text: FFLocalizations.of(context).getText(
+                                  'd8qwgowq' /* Continue with Google */,
+                                ),
                                 icon: const FaIcon(
                                   FontAwesomeIcons.google,
                                   size: 20.0,
@@ -461,15 +468,13 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                       0.0, 0.0, 0.0, 0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color: const Color(0xE1FFFFFF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleSmallFamily,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                        color: const Color(0xFF232327),
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
                                                 FlutterFlowTheme.of(context)
@@ -504,7 +509,9 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                         context.goNamedAuth(
                                             'chat_2_main', context.mounted);
                                       },
-                                      text: 'Continue with Apple',
+                                      text: FFLocalizations.of(context).getText(
+                                        'wk2w4ojk' /* Continue with Apple */,
+                                      ),
                                       icon: const FaIcon(
                                         FontAwesomeIcons.apple,
                                         size: 20.0,
@@ -517,17 +524,14 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                        color: const Color(0xE1FFFFFF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                              color: const Color(0xFF232327),
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
@@ -578,17 +582,25 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                         MediaQuery.of(context).textScaleFactor,
                                     text: TextSpan(
                                       children: [
-                                        const TextSpan(
-                                          text: 'Already have an account? ',
-                                          style: TextStyle(),
+                                        TextSpan(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'os3j1pin' /* Already have an account?  */,
+                                          ),
+                                          style: const TextStyle(
+                                            color: Color(0xFFA4A3AD),
+                                          ),
                                         ),
                                         TextSpan(
-                                          text: 'Sign in here',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '6tmtoqz1' /* Sign in here */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Poppins',
-                                                color: const Color(0xC57F77B4),
+                                                color: const Color(0xE1FFFFFF),
                                                 fontSize: 16.0,
                                                 fontWeight: FontWeight.w600,
                                                 decoration:

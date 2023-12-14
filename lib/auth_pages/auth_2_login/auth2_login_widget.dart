@@ -188,14 +188,15 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Welcome Back',
+                                      FFLocalizations.of(context).getText(
+                                        '17nhnkdz' /* Welcome Back */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
                                             fontFamily: 'Acme',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                            color: const Color(0xE1FFFFFF),
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
@@ -206,7 +207,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 24.0),
                                       child: Text(
-                                        'Fill out the information below in order to access your account.',
+                                        FFLocalizations.of(context).getText(
+                                          '5npa4tyh' /* Fill out the information below... */,
+                                        ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -214,9 +217,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .labelLargeFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                              color: const Color(0xFFA4A3AD),
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
@@ -240,15 +241,17 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           autofillHints: const [AutofillHints.email],
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'Email',
+                                            labelText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'jiku9boa' /* Email */,
+                                            ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelLarge,
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
                                                 width: 2.0,
                                               ),
                                               borderRadius:
@@ -286,9 +289,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
+                                            fillColor: const Color(0xE1FFFFFF),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium,
@@ -318,15 +319,17 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           obscureText:
                                               !_model.passwordVisibility,
                                           decoration: InputDecoration(
-                                            labelText: 'Password',
+                                            labelText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'uuf61ori' /* Password */,
+                                            ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelLarge,
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
                                                 width: 2.0,
                                               ),
                                               borderRadius:
@@ -364,9 +367,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
+                                            fillColor: const Color(0xE1FFFFFF),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
                                                 () => _model
@@ -430,7 +431,10 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                             },
                                           );
                                         },
-                                        text: 'Sign In',
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'e18rppm6' /* Sign In */,
+                                        ),
                                         options: FFButtonOptions(
                                           width: double.infinity,
                                           height: 44.0,
@@ -474,7 +478,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 24.0),
                                         child: Text(
-                                          'Or sign in with',
+                                          FFLocalizations.of(context).getText(
+                                            'mopylxq4' /* Or sign in with */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
@@ -482,6 +488,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                 fontFamily:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmallFamily,
+                                                color: const Color(0xFFA4A3AD),
                                                 fontSize: 14.0,
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
@@ -509,7 +516,10 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           context.goNamedAuth(
                                               'chat_2_main', context.mounted);
                                         },
-                                        text: 'Continue with Google',
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          '5bmnyzax' /* Continue with Google */,
+                                        ),
                                         icon: const FaIcon(
                                           FontAwesomeIcons.google,
                                           size: 20.0,
@@ -523,8 +533,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           iconPadding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                          color: const Color(0xE1FFFFFF),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall
@@ -532,9 +541,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                 fontFamily:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmallFamily,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                color: const Color(0xFF232327),
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
                                                     .containsKey(
@@ -550,9 +557,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
-                                          hoverColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
+                                          hoverColor: const Color(0xE1FFFFFF),
                                         ),
                                       ),
                                     ),
@@ -576,9 +581,13 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                     'chat_2_main',
                                                     context.mounted);
                                               },
-                                              text: 'Continue with Apple',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'mymw72vz' /* Continue with Apple */,
+                                              ),
                                               icon: const FaIcon(
                                                 FontAwesomeIcons.apple,
+                                                color: Color(0xFF232327),
                                                 size: 20.0,
                                               ),
                                               options: FFButtonOptions(
@@ -591,9 +600,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                     const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                color: const Color(0xE1FFFFFF),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -602,9 +609,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
+                                                          color:
+                                                              const Color(0xFF232327),
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
@@ -662,16 +668,21 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                             text: TextSpan(
                                               children: [
                                                 TextSpan(
-                                                  text:
-                                                      'Don\'t have an account?  ',
-                                                  style: TextStyle(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'c78m49wi' /* Don't have an account?   */,
+                                                  ),
+                                                  style: const TextStyle(
+                                                    color: Color(0xFFA4A3AD),
                                                   ),
                                                 ),
                                                 TextSpan(
-                                                  text: 'Create Account',
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    's6fttluv' /* Create Account */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -681,7 +692,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                                     context)
                                                                 .bodyMediumFamily,
                                                         color:
-                                                            const Color(0xC54B39EF),
+                                                            const Color(0xE1FFFFFF),
                                                         fontWeight:
                                                             FontWeight.w600,
                                                         decoration:
@@ -722,7 +733,10 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                             },
                                           );
                                         },
-                                        text: 'Forgot password?',
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'zfporiyx' /* Forgot password? */,
+                                        ),
                                         options: FFButtonOptions(
                                           width: double.infinity,
                                           height: 44.0,
@@ -732,8 +746,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           iconPadding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                          color: const Color(0x001D2428),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall
@@ -742,6 +755,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
+                                                decoration:
+                                                    TextDecoration.underline,
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
                                                     .containsKey(
@@ -750,16 +765,11 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                             .titleSmallFamily),
                                               ),
                                           elevation: 0.0,
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                          borderSide: const BorderSide(
                                             width: 2.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
-                                          hoverColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
                                         ),
                                       ),
                                     ),

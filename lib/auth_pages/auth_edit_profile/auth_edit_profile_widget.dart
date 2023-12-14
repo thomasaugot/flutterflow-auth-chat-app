@@ -88,10 +88,9 @@ class _AuthEditProfileWidgetState extends State<AuthEditProfileWidget> {
                                 borderRadius: 20.0,
                                 borderWidth: 1.0,
                                 buttonSize: 60.0,
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_back_ios_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  color: Color(0xE1FFFFFF),
                                   size: 30.0,
                                 ),
                                 onPressed: () async {

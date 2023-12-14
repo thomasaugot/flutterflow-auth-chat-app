@@ -87,9 +87,9 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryBackground,
+              color: Color(0xE1FFFFFF),
               size: 30.0,
             ),
             onPressed: () async {
@@ -498,9 +498,9 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                 borderRadius: 12.0,
                 borderWidth: 2.0,
                 buttonSize: 40.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.more_vert,
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: Color(0xE1FFFFFF),
                   size: 24.0,
                 ),
                 onPressed: () async {

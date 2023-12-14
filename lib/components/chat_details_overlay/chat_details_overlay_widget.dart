@@ -84,11 +84,14 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Chat Details',
+                            FFLocalizations.of(context).getText(
+                              'ijvxi3lb' /* Chat Details */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
                                   fontFamily: 'Acme',
+                                  color: const Color(0xFF232327),
                                   fontSize: 28.0,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
@@ -100,15 +103,14 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 16.0, 0.0),
                           child: FlutterFlowIconButton(
-                            borderColor: FlutterFlowTheme.of(context).alternate,
                             borderRadius: 12.0,
                             borderWidth: 1.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).accent4,
-                            icon: Icon(
+                            fillColor: const Color(0xFF232327),
+                            icon: const Icon(
                               Icons.close_rounded,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24.0,
+                              color: Color(0xFF232327),
+                              size: 34.0,
                             ),
                             onPressed: () async {
                               Navigator.pop(context);
@@ -124,19 +126,40 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                         textScaleFactor: MediaQuery.of(context).textScaleFactor,
                         text: TextSpan(
                           children: [
-                            const TextSpan(
-                              text: 'Group Chat ID: ',
-                              style: TextStyle(),
+                            TextSpan(
+                              text: FFLocalizations.of(context).getText(
+                                'ou1gqdoq' /* Group Chat ID:  */,
+                              ),
+                              style: const TextStyle(),
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
                                 widget.chatRef?.groupChatId.toString(),
                                 '--',
                               ),
-                              style: FlutterFlowTheme.of(context).titleMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleMediumFamily,
+                                    color: const Color(0xFFA4A3AD),
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                  ),
                             )
                           ],
-                          style: FlutterFlowTheme.of(context).titleMedium,
+                          style: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleMediumFamily,
+                                color: const Color(0xFFA4A3AD),
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleMediumFamily),
+                              ),
                         ),
                       ),
                     ),
@@ -144,8 +167,18 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                       child: Text(
-                        'In this chat',
-                        style: FlutterFlowTheme.of(context).titleMedium,
+                        FFLocalizations.of(context).getText(
+                          '3pfta4wv' /* In this chat */,
+                        ),
+                        style:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
+                                  color: const Color(0xFFA4A3AD),
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
+                                ),
                       ),
                     ),
                     Expanded(
@@ -308,7 +341,9 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                         onPressed: () async {
                           Navigator.pop(context);
                         },
-                        text: 'Close',
+                        text: FFLocalizations.of(context).getText(
+                          '0a1ndn89' /* Close */,
+                        ),
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,
@@ -316,8 +351,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                               44.0, 0.0, 44.0, 0.0),
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleLarge
                               .override(
@@ -329,16 +363,11 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                         .titleLargeFamily),
                               ),
                           elevation: 0.0,
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
+                          borderSide: const BorderSide(
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(12.0),
-                          hoverColor: FlutterFlowTheme.of(context).alternate,
-                          hoverBorderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
-                          ),
+                          hoverColor: FlutterFlowTheme.of(context).primary,
                           hoverTextColor:
                               FlutterFlowTheme.of(context).primaryText,
                           hoverElevation: 3.0,

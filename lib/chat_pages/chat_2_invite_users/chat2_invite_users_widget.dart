@@ -90,11 +90,21 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Invite Friends',
-                  style: FlutterFlowTheme.of(context).headlineSmall,
+                  FFLocalizations.of(context).getText(
+                    'o3u6n7ra' /* Invite Friends */,
+                  ),
+                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                        color: const Color(0xE1FFFFFF),
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineSmallFamily),
+                      ),
                 ),
                 Text(
-                  'Select users from below to start a chat.',
+                  FFLocalizations.of(context).getText(
+                    'songbpnl' /* Select users from below to sta... */,
+                  ),
                   style: FlutterFlowTheme.of(context).titleSmall,
                 ),
               ],
@@ -108,9 +118,9 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                 borderRadius: 12.0,
                 borderWidth: 1.0,
                 buttonSize: 48.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: Color(0xE1FFFFFF),
                   size: 24.0,
                 ),
                 onPressed: () async {
@@ -173,7 +183,9 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               2.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            'Selected',
+                            FFLocalizations.of(context).getText(
+                              'b8ck0ybg' /* Selected */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -255,18 +267,23 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                   width: 100.0,
                                   height: 70.0,
                                   decoration: BoxDecoration(
-                                    color: _model.friendsList.contains(
-                                            listViewUsersRecord.reference)
-                                        ? FlutterFlowTheme.of(context).accent1
-                                        : FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                    color: valueOrDefault<Color>(
+                                      _model.friendsList.contains(
+                                              listViewUsersRecord.reference)
+                                          ? FlutterFlowTheme.of(context).accent1
+                                          : const Color(0xE1FFFFFF),
+                                      const Color(0xE1FFFFFF),
+                                    ),
                                     borderRadius: BorderRadius.circular(12.0),
                                     border: Border.all(
-                                      color: _model.friendsList.contains(
-                                              listViewUsersRecord.reference)
-                                          ? FlutterFlowTheme.of(context).primary
-                                          : FlutterFlowTheme.of(context)
-                                              .alternate,
+                                      color: valueOrDefault<Color>(
+                                        _model.friendsList.contains(
+                                                listViewUsersRecord.reference)
+                                            ? FlutterFlowTheme.of(context)
+                                                .primary
+                                            : const Color(0xE1FFFFFF),
+                                        const Color(0xE1FFFFFF),
+                                      ),
                                       width: 1.0,
                                     ),
                                   ),
@@ -359,18 +376,20 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLarge
+                                                      .titleLarge
                                                       .override(
                                                         fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyLargeFamily,
+                                                                .titleLargeFamily,
+                                                        color:
+                                                            const Color(0xFF232327),
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyLargeFamily),
+                                                                    .titleLargeFamily),
                                                         lineHeight: 2.0,
                                                       ),
                                             ),
@@ -381,27 +400,9 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmallFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily),
-                                                      ),
+                                                      .labelSmall,
                                             ),
-                                            tileColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
+                                            tileColor: const Color(0xFF232327),
                                             activeColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
