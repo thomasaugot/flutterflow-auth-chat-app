@@ -4,24 +4,25 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'auth2_profile_model.dart';
-export 'auth2_profile_model.dart';
+import 'auth_profile_model.dart';
+export 'auth_profile_model.dart';
 
-class Auth2ProfileWidget extends StatefulWidget {
-  const Auth2ProfileWidget({super.key});
+class AuthProfileWidget extends StatefulWidget {
+  const AuthProfileWidget({super.key});
 
   @override
-  _Auth2ProfileWidgetState createState() => _Auth2ProfileWidgetState();
+  _AuthProfileWidgetState createState() => _AuthProfileWidgetState();
 }
 
-class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
+class _AuthProfileWidgetState extends State<AuthProfileWidget>
     with TickerProviderStateMixin {
-  late Auth2ProfileModel _model;
+  late AuthProfileModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -51,7 +52,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth2ProfileModel());
+    _model = createModel(context, () => AuthProfileModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -108,37 +109,41 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 10.0, 10.0, 10.0),
-                                child: FlutterFlowIconButton(
-                                  borderColor: Colors.transparent,
-                                  borderRadius: 20.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
-                                  icon: Icon(
-                                    Icons.arrow_back_ios_outlined,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    size: 30.0,
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 10.0, 10.0, 10.0),
+                                  child: FlutterFlowIconButton(
+                                    borderColor: Colors.transparent,
+                                    borderRadius: 20.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
+                                    icon: Icon(
+                                      Icons.arrow_back_ios_outlined,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () async {
+                                      context.pushNamed('chat_2_main');
+                                    },
                                   ),
-                                  onPressed: () async {
-                                    context.safePop();
-                                  },
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                     Padding(
                       padding:
@@ -155,7 +160,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                 child: CachedNetworkImage(
                                   fadeInDuration: const Duration(milliseconds: 500),
                                   fadeOutDuration: const Duration(milliseconds: 500),
-                                  imageUrl: currentUserPhoto,
+                                  imageUrl: valueOrDefault<String>(
+                                    currentUserPhoto,
+                                    'https://img.freepik.com/premium-vector/people-ribbon-logo-modern-leadership-logo-human-charity-logo_327835-2463.jpg',
+                                  ),
                                   width: 100.0,
                                   height: 100.0,
                                   fit: BoxFit.cover,
@@ -175,8 +183,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: AuthUserStreamWidget(
-                                      builder: (context) => Text(
+                                      builder: (context) => AutoSizeText(
                                         currentUserDisplayName,
+                                        maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -199,11 +208,12 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 4.0, 0.0, 16.0),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       valueOrDefault<String>(
                                         currentUserEmail,
                                         'andrew@domainname.com',
                                       ),
+                                      maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -252,7 +262,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('auth_2_EditProfile');
+                          context.pushNamed('auth_EditProfile');
                         },
                         child: Container(
                           width: double.infinity,
@@ -460,8 +470,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             await authManager.signOut();
                             GoRouter.of(context).clearRedirectLocation();
 
-                            context.goNamedAuth(
-                                'auth_2_Create', context.mounted);
+                            context.goNamedAuth('auth_Signup', context.mounted);
                           },
                           text: 'Log Out',
                           options: FFButtonOptions(

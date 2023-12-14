@@ -4,25 +4,25 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'auth2_edit_profile_model.dart';
-export 'auth2_edit_profile_model.dart';
+import 'auth_edit_profile_model.dart';
+export 'auth_edit_profile_model.dart';
 
-class Auth2EditProfileWidget extends StatefulWidget {
-  const Auth2EditProfileWidget({super.key});
+class AuthEditProfileWidget extends StatefulWidget {
+  const AuthEditProfileWidget({super.key});
 
   @override
-  _Auth2EditProfileWidgetState createState() => _Auth2EditProfileWidgetState();
+  _AuthEditProfileWidgetState createState() => _AuthEditProfileWidgetState();
 }
 
-class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget> {
-  late Auth2EditProfileModel _model;
+class _AuthEditProfileWidgetState extends State<AuthEditProfileWidget> {
+  late AuthEditProfileModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth2EditProfileModel());
+    _model = createModel(context, () => AuthEditProfileModel());
   }
 
   @override
@@ -72,32 +72,36 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.00, 0.00),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 10.0, 10.0, 10.0),
-                            child: FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 20.0,
-                              borderWidth: 1.0,
-                              buttonSize: 60.0,
-                              icon: Icon(
-                                Icons.arrow_back_ios_outlined,
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                size: 30.0,
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Align(
+                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 10.0, 10.0, 10.0),
+                              child: FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 20.0,
+                                borderWidth: 1.0,
+                                buttonSize: 60.0,
+                                icon: Icon(
+                                  Icons.arrow_back_ios_outlined,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  size: 30.0,
+                                ),
+                                onPressed: () async {
+                                  context.safePop();
+                                },
                               ),
-                              onPressed: () async {
-                                context.safePop();
-                              },
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.00, 0.00),

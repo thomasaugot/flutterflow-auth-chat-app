@@ -85,7 +85,15 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Chat Details',
-                            style: FlutterFlowTheme.of(context).headlineSmall,
+                            style: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .override(
+                                  fontFamily: 'Acme',
+                                  fontSize: 28.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
+                                ),
                           ),
                         ),
                         Padding(
@@ -125,13 +133,10 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                 widget.chatRef?.groupChatId.toString(),
                                 '--',
                               ),
-                              style: TextStyle(
-                                color: FlutterFlowTheme.of(context).primary,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: FlutterFlowTheme.of(context).titleMedium,
                             )
                           ],
-                          style: FlutterFlowTheme.of(context).labelMedium,
+                          style: FlutterFlowTheme.of(context).titleMedium,
                         ),
                       ),
                     ),
@@ -140,7 +145,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                       child: Text(
                         'In this chat',
-                        style: FlutterFlowTheme.of(context).labelMedium,
+                        style: FlutterFlowTheme.of(context).titleMedium,
                       ),
                     ),
                     Expanded(

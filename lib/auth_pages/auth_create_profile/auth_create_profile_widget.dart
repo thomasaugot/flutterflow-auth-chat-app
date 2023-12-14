@@ -6,20 +6,20 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'auth2_create_profile_model.dart';
-export 'auth2_create_profile_model.dart';
+import 'auth_create_profile_model.dart';
+export 'auth_create_profile_model.dart';
 
-class Auth2CreateProfileWidget extends StatefulWidget {
-  const Auth2CreateProfileWidget({super.key});
+class AuthCreateProfileWidget extends StatefulWidget {
+  const AuthCreateProfileWidget({super.key});
 
   @override
-  _Auth2CreateProfileWidgetState createState() =>
-      _Auth2CreateProfileWidgetState();
+  _AuthCreateProfileWidgetState createState() =>
+      _AuthCreateProfileWidgetState();
 }
 
-class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
+class _AuthCreateProfileWidgetState extends State<AuthCreateProfileWidget>
     with TickerProviderStateMixin {
-  late Auth2CreateProfileModel _model;
+  late AuthCreateProfileModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -63,7 +63,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth2CreateProfileModel());
+    _model = createModel(context, () => AuthCreateProfileModel());
   }
 
   @override
@@ -116,31 +116,34 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 10.0, 10.0, 10.0),
-                        child: FlutterFlowIconButton(
-                          borderRadius: 20.0,
-                          borderWidth: 1.0,
-                          buttonSize: 60.0,
-                          icon: Icon(
-                            Icons.arrow_back_ios_outlined,
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            size: 30.0,
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(0.00, 0.00),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 10.0, 10.0, 10.0),
+                          child: FlutterFlowIconButton(
+                            borderRadius: 20.0,
+                            borderWidth: 1.0,
+                            buttonSize: 60.0,
+                            icon: Icon(
+                              Icons.arrow_back_ios_outlined,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              size: 30.0,
+                            ),
+                            onPressed: () async {
+                              context.pushNamed('auth_Signup');
+                            },
                           ),
-                          onPressed: () async {
-                            context.safePop();
-                          },
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Padding(
                   padding:
@@ -151,7 +154,6 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: Image.asset(
@@ -177,7 +179,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                           title: 'Create Profile',
                           confirmButtonText: 'Save & Continue',
                           navigateAction: () async {
-                            context.pushNamed('auth_2_Profile');
+                            context.pushNamed('auth_Profile');
                           },
                         ),
                       ),

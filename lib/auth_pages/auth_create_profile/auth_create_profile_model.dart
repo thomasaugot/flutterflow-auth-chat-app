@@ -1,9 +1,9 @@
 import '/components/edit_profile_auth_2/edit_profile_auth2_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'auth2_edit_profile_widget.dart' show Auth2EditProfileWidget;
+import 'auth_create_profile_widget.dart' show AuthCreateProfileWidget;
 import 'package:flutter/material.dart';
 
-class Auth2EditProfileModel extends FlutterFlowModel<Auth2EditProfileWidget> {
+class AuthCreateProfileModel extends FlutterFlowModel<AuthCreateProfileWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

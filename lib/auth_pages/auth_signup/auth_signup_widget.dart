@@ -9,19 +9,19 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'auth2_create_model.dart';
-export 'auth2_create_model.dart';
+import 'auth_signup_model.dart';
+export 'auth_signup_model.dart';
 
-class Auth2CreateWidget extends StatefulWidget {
-  const Auth2CreateWidget({super.key});
+class AuthSignupWidget extends StatefulWidget {
+  const AuthSignupWidget({super.key});
 
   @override
-  _Auth2CreateWidgetState createState() => _Auth2CreateWidgetState();
+  _AuthSignupWidgetState createState() => _AuthSignupWidgetState();
 }
 
-class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
+class _AuthSignupWidgetState extends State<AuthSignupWidget>
     with TickerProviderStateMixin {
-  late Auth2CreateModel _model;
+  late AuthSignupModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -65,7 +65,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth2CreateModel());
+    _model = createModel(context, () => AuthSignupModel());
 
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -161,7 +161,6 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xC51C09C9),
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: Image.asset(
@@ -383,7 +382,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   }
 
                                   context.goNamedAuth(
-                                      'auth_2_createProfile', context.mounted);
+                                      'auth_CreateProfile', context.mounted);
                                 },
                                 text: 'Create Account',
                                 options: FFButtonOptions(
@@ -590,6 +589,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 color: const Color(0xC57F77B4),
+                                                fontSize: 16.0,
                                                 fontWeight: FontWeight.w600,
                                                 decoration:
                                                     TextDecoration.underline,
@@ -612,6 +612,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMediumFamily),
+                                            lineHeight: 2.0,
                                           ),
                                     ),
                                   ),

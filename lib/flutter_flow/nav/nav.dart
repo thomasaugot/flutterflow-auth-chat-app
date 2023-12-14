@@ -7,6 +7,7 @@ import '/backend/backend.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -72,19 +73,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const Chat2MainWidget() : const Auth2CreateWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const AuthSignupWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const Chat2MainWidget()
-              : const Auth2CreateWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const NavBarPage() : const AuthSignupWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Create',
-          path: '/auth2Create',
-          builder: (context, params) => const Auth2CreateWidget(),
+          name: 'auth_Signup',
+          path: '/authSignup',
+          builder: (context, params) => const AuthSignupWidget(),
         ),
         FFRoute(
           name: 'auth_2_Login',
@@ -97,19 +97,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const Auth2ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'auth_2_createProfile',
-          path: '/auth2CreateProfile',
-          builder: (context, params) => const Auth2CreateProfileWidget(),
+          name: 'auth_CreateProfile',
+          path: '/authCreateProfile',
+          builder: (context, params) => const AuthCreateProfileWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Profile',
-          path: '/auth2Profile',
-          builder: (context, params) => const Auth2ProfileWidget(),
+          name: 'auth_Profile',
+          path: '/authProfile',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'auth_Profile')
+              : const AuthProfileWidget(),
         ),
         FFRoute(
-          name: 'auth_2_EditProfile',
-          path: '/auth2EditProfile',
-          builder: (context, params) => const Auth2EditProfileWidget(),
+          name: 'auth_EditProfile',
+          path: '/authEditProfile',
+          builder: (context, params) => const AuthEditProfileWidget(),
         ),
         FFRoute(
           name: 'chat_2_Details',
@@ -124,7 +126,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'chat_2_main',
           path: '/chat2Main',
-          builder: (context, params) => const Chat2MainWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'chat_2_main')
+              : const Chat2MainWidget(),
         ),
         FFRoute(
           name: 'chat_2_InviteUsers',
@@ -313,7 +317,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/auth2Create';
+            return '/authSignup';
           }
           return null;
         },

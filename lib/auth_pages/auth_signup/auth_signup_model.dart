@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'auth2_create_widget.dart' show Auth2CreateWidget;
+import 'auth_signup_widget.dart' show AuthSignupWidget;
 import 'package:flutter/material.dart';
 
-class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
+class AuthSignupModel extends FlutterFlowModel<AuthSignupWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

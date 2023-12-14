@@ -94,7 +94,8 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                             width: 36.0,
                             height: 36.0,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).accent1,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
                               borderRadius: BorderRadius.circular(12.0),
                               shape: BoxShape.rectangle,
                               border: Border.all(
@@ -126,41 +127,13 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                     ),
                                   );
                                 } else {
-                                  return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        2.0, 2.0, 2.0, 2.0),
-                                    child: Container(
-                                      width: 100.0,
-                                      height: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      alignment:
-                                          const AlignmentDirectional(0.00, 0.00),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          otherUserUsersRecord.displayName,
-                                          'A',
-                                        ).maybeHandleOverflow(maxChars: 1),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLargeFamily,
-                                              fontWeight: FontWeight.bold,
-                                              useGoogleFonts:
-                                                  GoogleFonts.asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLargeFamily),
-                                            ),
-                                      ),
+                                  return ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.network(
+                                      otherUserUsersRecord.photoUrl,
+                                      width: 300.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
                                     ),
                                   );
                                 }
@@ -185,16 +158,17 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                       otherUserUsersRecord.displayName,
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
-                                          .labelSmall
+                                          .titleSmall
                                           .override(
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelSmallFamily,
-                                            fontWeight: FontWeight.bold,
+                                                    .titleSmallFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
-                                                        .labelSmallFamily),
+                                                        .titleSmallFamily),
                                           ),
                                     )),
                                     Text(
@@ -204,7 +178,18 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                         '--',
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
+                                          .labelSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmallFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmallFamily),
+                                          ),
                                     ),
                                   ].divide(const SizedBox(width: 4.0)),
                                 ),
@@ -212,7 +197,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                   boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 3.0,
@@ -227,8 +212,6 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                     topRight: Radius.circular(12.0),
                                   ),
                                   border: Border.all(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
                                     width: 1.0,
                                   ),
                                 ),
@@ -248,17 +231,17 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge
+                                            .bodySmall
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLargeFamily,
+                                                      .bodySmallFamily,
                                               useGoogleFonts:
                                                   GoogleFonts.asMap()
                                                       .containsKey(
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyLargeFamily),
+                                                              .bodySmallFamily),
                                               lineHeight: 1.5,
                                             ),
                                       )),
@@ -351,19 +334,58 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
-                      child: Text(
-                        valueOrDefault<String>(
-                          dateTimeFormat(
-                              'relative', widget.chatMessagesRef?.timestamp),
-                          '--',
-                        ),
-                        style: FlutterFlowTheme.of(context).labelSmall,
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          AuthUserStreamWidget(
+                            builder: (context) => SelectionArea(
+                                child: AutoSizeText(
+                              valueOrDefault<String>(
+                                currentUserDisplayName,
+                                'me',
+                              ),
+                              textAlign: TextAlign.start,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
+                                  ),
+                            )),
+                          ),
+                          Text(
+                            valueOrDefault<String>(
+                              dateTimeFormat('relative',
+                                  widget.chatMessagesRef?.timestamp),
+                              '--',
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .labelSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelSmallFamily),
+                                ),
+                          ),
+                        ].divide(const SizedBox(width: 4.0)),
                       ),
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         boxShadow: const [
                           BoxShadow(
                             blurRadius: 3.0,
@@ -376,9 +398,6 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                           bottomRight: Radius.circular(0.0),
                           topLeft: Radius.circular(12.0),
                           topRight: Radius.circular(12.0),
-                        ),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).accent1,
                         ),
                       ),
                       child: Padding(
@@ -394,7 +413,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                 widget.chatMessagesRef?.text,
                                 '--',
                               ),
-                              style: FlutterFlowTheme.of(context).titleSmall,
+                              style: FlutterFlowTheme.of(context).bodySmall,
                             )),
                             if (widget.chatMessagesRef?.image != null &&
                                 widget.chatMessagesRef?.image != '')

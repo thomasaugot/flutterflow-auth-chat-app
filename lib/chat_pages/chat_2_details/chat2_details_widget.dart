@@ -80,7 +80,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: const Color(0xC57F77B4),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -89,7 +89,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
             buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
+              color: FlutterFlowTheme.of(context).primaryBackground,
               size: 30.0,
             ),
             onPressed: () async {
@@ -143,6 +143,12 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                 height: 44.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).accent1,
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: Image.asset(
+                                      'assets/images/bg-app.jpg',
+                                    ).image,
+                                  ),
                                   borderRadius: BorderRadius.circular(12.0),
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
@@ -285,7 +291,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                         valueOrDefault<String>(
                                                       secondUserUsersRecord
                                                           .photoUrl,
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/test-flow-at3mts/assets/jozbfglfd548/flutterflow_future%402x.jpg',
+                                                      'https://img.freepik.com/premium-vector/people-ribbon-logo-modern-leadership-logo-human-charity-logo_327835-2463.jpg',
                                                     ),
                                                     width: 44.0,
                                                     height: 44.0,
@@ -384,7 +390,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                     valueOrDefault<String>(
                                                   conditionalBuilderUsersRecord
                                                       .photoUrl,
-                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/test-flow-at3mts/assets/jozbfglfd548/flutterflow_future%402x.jpg',
+                                                  'https://img.freepik.com/premium-vector/people-ribbon-logo-modern-leadership-logo-human-charity-logo_327835-2463.jpg',
                                                 ),
                                                 width: 44.0,
                                                 height: 44.0,
@@ -447,37 +453,35 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                           ),
                         ),
                         Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Group Chat',
-                                style: FlutterFlowTheme.of(context).bodyLarge,
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 0.0, 0.0),
-                                child: Text(
-                                  '${valueOrDefault<String>(
-                                    widget.chatRef?.users.length.toString(),
-                                    '2',
-                                  )} members',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmallFamily),
-                                      ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 10.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  valueOrDefault<String>(
+                                    widget.chatRef?.chatName,
+                                    'Conversation',
+                                  ),
+                                  style:
+                                      FlutterFlowTheme.of(context).titleSmall,
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 2.0, 0.0, 0.0),
+                                  child: Text(
+                                    '${valueOrDefault<String>(
+                                      widget.chatRef?.users.length.toString(),
+                                      '2',
+                                    )} members',
+                                    style:
+                                        FlutterFlowTheme.of(context).titleSmall,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -491,20 +495,18 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
               child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
                 borderRadius: 12.0,
                 borderWidth: 2.0,
                 buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).primaryBackground,
                 icon: Icon(
                   Icons.more_vert,
-                  color: FlutterFlowTheme.of(context).primaryText,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   size: 24.0,
                 ),
                 onPressed: () async {
                   await showModalBottomSheet(
                     isScrollControlled: true,
-                    backgroundColor: FlutterFlowTheme.of(context).accent4,
+                    backgroundColor: const Color(0xE1FFFFFF),
                     barrierColor: const Color(0x00FFFFFF),
                     context: context,
                     builder: (context) {
@@ -529,15 +531,12 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
           centerTitle: false,
           elevation: 0.0,
         ),
-        body: SafeArea(
-          top: true,
-          child: wrapWithModel(
-            model: _model.chatThreadComponentModel,
-            updateCallback: () => setState(() {}),
-            updateOnChange: true,
-            child: ChatThreadComponentWidget(
-              chatRef: widget.chatRef,
-            ),
+        body: wrapWithModel(
+          model: _model.chatThreadComponentModel,
+          updateCallback: () => setState(() {}),
+          updateOnChange: true,
+          child: ChatThreadComponentWidget(
+            chatRef: widget.chatRef,
           ),
         ),
       ),

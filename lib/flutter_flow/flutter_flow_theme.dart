@@ -208,49 +208,49 @@ class MobileTypography extends Typography {
   String get displayLargeFamily => 'Acme';
   TextStyle get displayLarge => GoogleFonts.getFont(
         'Acme',
-        color: theme.primaryText,
+        color: theme.primaryBackground,
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
   String get displayMediumFamily => 'Acme';
   TextStyle get displayMedium => GoogleFonts.getFont(
         'Acme',
-        color: theme.primaryText,
+        color: theme.primaryBackground,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
   String get displaySmallFamily => 'Acme';
   TextStyle get displaySmall => GoogleFonts.getFont(
         'Acme',
-        color: theme.primaryText,
+        color: theme.primaryBackground,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
   String get headlineLargeFamily => 'Acme';
   TextStyle get headlineLarge => GoogleFonts.getFont(
         'Acme',
-        color: theme.primaryText,
+        color: theme.primaryBackground,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
   String get headlineMediumFamily => 'Acme';
   TextStyle get headlineMedium => GoogleFonts.getFont(
         'Acme',
-        color: theme.primaryText,
+        color: theme.primaryBackground,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
   String get headlineSmallFamily => 'Acme';
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Acme',
-        color: theme.primaryText,
+        color: theme.primaryBackground,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
   String get titleLargeFamily => 'Acme';
   TextStyle get titleLarge => GoogleFonts.getFont(
         'Acme',
-        color: theme.primaryText,
+        color: theme.primaryBackground,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );

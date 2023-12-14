@@ -163,8 +163,6 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: Image.asset(
@@ -644,7 +642,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'auth_2_Create',
+                                              'auth_Signup',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     const TransitionInfo(
