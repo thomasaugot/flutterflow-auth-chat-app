@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'auth2_login_widget.dart' show Auth2LoginWidget;
+import 'auth_forgot_password_widget.dart' show AuthForgotPasswordWidget;
 import 'package:flutter/material.dart';
 
-class Auth2LoginModel extends FlutterFlowModel<Auth2LoginWidget> {
+class AuthForgotPasswordModel
+    extends FlutterFlowModel<AuthForgotPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -10,27 +11,17 @@ class Auth2LoginModel extends FlutterFlowModel<Auth2LoginWidget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode;
-  TextEditingController? passwordController;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordControllerValidator;
 
   /// Initialization and disposal methods.
 
   @override
-  void initState(BuildContext context) {
-    passwordVisibility = false;
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
     unfocusNode.dispose();
     emailAddressFocusNode?.dispose();
     emailAddressController?.dispose();
-
-    passwordFocusNode?.dispose();
-    passwordController?.dispose();
   }
 
   /// Action blocks are added here.

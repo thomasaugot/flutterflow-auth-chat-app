@@ -119,20 +119,20 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
               end: const AlignmentDirectional(-0.87, 1.0),
             ),
           ),
-          alignment: const AlignmentDirectional(0.00, -1.00),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Flexible(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 0.0),
@@ -143,7 +143,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                 width: 200.0,
                                 height: 200.0,
                                 fit: BoxFit.cover,
-                                alignment: const Alignment(0.00, 0.00),
+                                alignment: const Alignment(0.0, 0.0),
                               ),
                             ),
                           ),
@@ -153,8 +153,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Container(
                     width: double.infinity,
                     constraints: const BoxConstraints(
@@ -177,10 +176,9 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            32.0, 32.0, 32.0, 32.0),
+                        padding: const EdgeInsets.all(32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -235,12 +233,22 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   autofillHints: const [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      'jzvd7m5d' /* Email */,
-                                    ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).labelLarge,
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'u6jsv4d3' /* Email */,
+                                    ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: const Color(0xFFA4A3AD),
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily),
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
                                         color: Color(0xE1FFFFFF),
@@ -278,6 +286,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                       .bodyLarge
                                       .override(
                                         fontFamily: 'Poppins',
+                                        color: const Color(0xFF232327),
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
                                                 FlutterFlowTheme.of(context)
@@ -304,12 +313,24 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   autofillHints: const [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      'dlogllhg' /* Password */,
-                                    ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).labelLarge,
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'uanyllu4' /* Password */,
+                                    ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily,
+                                          color: const Color(0xFFA4A3AD),
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily),
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
                                         color: Color(0xE1FFFFFF),
@@ -358,7 +379,17 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                       ),
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyLarge,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyLargeFamily,
+                                        color: const Color(0xFF232327),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLargeFamily),
+                                      ),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
                                   validator: _model.passwordControllerValidator
@@ -417,7 +448,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
@@ -452,7 +483,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   }
 
                                   context.goNamedAuth(
-                                      'chat_2_main', context.mounted);
+                                      'chat_main', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'd8qwgowq' /* Continue with Google */,
@@ -487,8 +518,6 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(12.0),
-                                  hoverColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                 ),
                               ),
                             ),
@@ -507,7 +536,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                         }
 
                                         context.goNamedAuth(
-                                            'chat_2_main', context.mounted);
+                                            'chat_main', context.mounted);
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'wk2w4ojk' /* Continue with Apple */,
@@ -547,15 +576,13 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
                                       ),
                                     ),
                                   ),
 
                             // You will have to add an action on this rich text to go to your login page.
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
@@ -566,7 +593,7 @@ class _AuthSignupWidgetState extends State<AuthSignupWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'auth_2_Login',
+                                      'auth_Login',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,

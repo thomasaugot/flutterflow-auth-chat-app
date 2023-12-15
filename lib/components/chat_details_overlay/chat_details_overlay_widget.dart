@@ -60,7 +60,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
           height: double.infinity,
           decoration: const BoxDecoration(),
           child: Align(
-            alignment: const AlignmentDirectional(0.00, -1.00),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
@@ -244,7 +244,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.00, -1.00),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
@@ -269,7 +269,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                   Navigator.pop(context);
 
                                   context.pushNamed(
-                                    'chat_2_InviteUsers',
+                                    'chat_InviteUsers',
                                     queryParameters: {
                                       'chatRef': serializeParam(
                                         widget.chatRef,
@@ -317,7 +317,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                   );
 
                                   context.pushNamed(
-                                    'chat_2_main',
+                                    'chat_main',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,

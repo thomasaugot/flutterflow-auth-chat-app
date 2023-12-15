@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -94,7 +95,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.00, -1.00),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
@@ -109,12 +110,11 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   ),
                 ),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Stack(
                     children: [
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => ClipRRect(
                             borderRadius: BorderRadius.circular(60.0),
@@ -133,8 +133,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(60.0),
                           child: CachedNetworkImage(
@@ -154,7 +153,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.00, -1.00),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 32.0),
               child: FFButtonWidget(
@@ -375,7 +374,30 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.00, 0.00),
+            alignment: const AlignmentDirectional(0.0, 0.0),
+            child: FlutterFlowLanguageSelector(
+              width: 200.0,
+              backgroundColor: FlutterFlowTheme.of(context).primaryText,
+              borderColor: Colors.transparent,
+              dropdownColor: FlutterFlowTheme.of(context).primaryText,
+              dropdownIconColor: const Color(0xFF232327),
+              borderRadius: 8.0,
+              textStyle: GoogleFonts.getFont(
+                'Poppins',
+                color: const Color(0xFF232327),
+                fontWeight: FontWeight.w500,
+                fontSize: 14.0,
+              ),
+              hideFlags: false,
+              flagSize: 27.0,
+              flagTextGap: 15.0,
+              currentLanguage: FFLocalizations.of(context).languageCode,
+              languages: FFLocalizations.languages(),
+              onChanged: (lang) => setAppLanguage(context, lang),
+            ),
+          ),
+          Align(
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 0.0),
               child: FFButtonWidget(
@@ -414,7 +436,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   await widget.navigateAction?.call();
 
                   context.pushNamed(
-                    'chat_2_main',
+                    'chat_main',
                     extra: <String, dynamic>{
                       kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,

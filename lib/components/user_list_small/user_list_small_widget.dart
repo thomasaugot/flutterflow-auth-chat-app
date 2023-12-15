@@ -86,8 +86,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                     if (widget.userRef?.photoUrl != null &&
                         widget.userRef?.photoUrl != '') {
                       return Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: CachedNetworkImage(
@@ -102,8 +101,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                       );
                     } else {
                       return Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: Container(
                           width: 100.0,
                           height: 100.0,
@@ -112,7 +110,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                                 .secondaryBackground,
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          alignment: const AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
                               widget.userRef?.displayName,
@@ -195,7 +193,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                     ),
                   ),
                   child: Align(
-                    alignment: const AlignmentDirectional(0.00, 0.00),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
