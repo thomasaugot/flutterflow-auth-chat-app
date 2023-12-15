@@ -6,17 +6,16 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'chat2_details_model.dart';
-export 'chat2_details_model.dart';
+import 'chat_details_model.dart';
+export 'chat_details_model.dart';
 
-class Chat2DetailsWidget extends StatefulWidget {
-  const Chat2DetailsWidget({
+class ChatDetailsWidget extends StatefulWidget {
+  const ChatDetailsWidget({
     super.key,
     required this.chatRef,
   });
@@ -24,18 +23,18 @@ class Chat2DetailsWidget extends StatefulWidget {
   final ChatsRecord? chatRef;
 
   @override
-  _Chat2DetailsWidgetState createState() => _Chat2DetailsWidgetState();
+  _ChatDetailsWidgetState createState() => _ChatDetailsWidgetState();
 }
 
-class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
-  late Chat2DetailsModel _model;
+class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
+  late ChatDetailsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Chat2DetailsModel());
+    _model = createModel(context, () => ChatDetailsModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -94,7 +93,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
             ),
             onPressed: () async {
               context.goNamed(
-                'chat_2_main',
+                'chat_main',
                 extra: <String, dynamic>{
                   kTransitionInfoKey: const TransitionInfo(
                     hasTransition: true,
@@ -134,7 +133,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                       children: [
                         if (conditionalBuilderUsersRecord.photoUrl != '')
                           Align(
-                            alignment: const AlignmentDirectional(-1.00, -1.00),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 12.0, 0.0),
@@ -157,8 +156,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      2.0, 2.0, 2.0, 2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.network(
@@ -184,32 +182,6 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyLarge,
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 0.0, 0.0),
-                                child: AutoSizeText(
-                                  valueOrDefault<String>(
-                                    conditionalBuilderUsersRecord.email,
-                                    'casper@ghost.io',
-                                  ).maybeHandleOverflow(
-                                    maxChars: 40,
-                                    replacement: '…',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmallFamily),
-                                      ),
-                                  minFontSize: 10.0,
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -228,7 +200,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                             child: Stack(
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(1.00, 1.00),
+                                  alignment: const AlignmentDirectional(1.0, 1.0),
                                   child: FutureBuilder<UsersRecord>(
                                     future: UsersRecord.getDocumentOnce(widget
                                         .chatRef!.users
@@ -275,9 +247,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                         .photoUrl !=
                                                     '') {
                                               return Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        2.0, 2.0, 2.0, 2.0),
+                                                padding: const EdgeInsets.all(2.0),
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -301,9 +271,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                               );
                                             } else {
                                               return Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        2.0, 2.0, 2.0, 2.0),
+                                                padding: const EdgeInsets.all(2.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 100.0,
@@ -317,7 +285,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                   ),
                                                   alignment:
                                                       const AlignmentDirectional(
-                                                          0.00, 0.00),
+                                                          0.0, 0.0),
                                                   child: Text(
                                                     valueOrDefault<String>(
                                                       secondUserUsersRecord
@@ -354,7 +322,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.00, -1.00),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: Container(
                                     width: 32.0,
                                     height: 32.0,
@@ -375,9 +343,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                     .photoUrl !=
                                                 '') {
                                           return Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 2.0, 2.0, 2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
@@ -400,9 +366,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                           );
                                         } else {
                                           return Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 2.0, 2.0, 2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: Container(
                                               width: 100.0,
                                               height: 100.0,
@@ -414,7 +378,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               alignment: const AlignmentDirectional(
-                                                  0.00, 0.00),
+                                                  0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   conditionalBuilderUsersRecord
@@ -460,14 +424,6 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  valueOrDefault<String>(
-                                    widget.chatRef?.chatName,
-                                    'Conversation',
-                                  ),
-                                  style:
-                                      FlutterFlowTheme.of(context).titleSmall,
-                                ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 2.0, 0.0, 0.0),

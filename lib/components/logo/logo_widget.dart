@@ -36,7 +36,7 @@ class _LogoWidgetState extends State<LogoWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.00, 0.00),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
         child: ClipRRect(
@@ -46,7 +46,7 @@ class _LogoWidgetState extends State<LogoWidget> {
             width: 200.0,
             height: 200.0,
             fit: BoxFit.cover,
-            alignment: const Alignment(0.00, 0.00),
+            alignment: const Alignment(0.0, 0.0),
           ),
         ),
       ),

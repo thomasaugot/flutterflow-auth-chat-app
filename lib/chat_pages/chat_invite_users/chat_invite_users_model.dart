@@ -1,10 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'chat2_invite_users_widget.dart' show Chat2InviteUsersWidget;
+import 'chat_invite_users_widget.dart' show ChatInviteUsersWidget;
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-class Chat2InviteUsersModel extends FlutterFlowModel<Chat2InviteUsersWidget> {
+class ChatInviteUsersModel extends FlutterFlowModel<ChatInviteUsersWidget> {
   ///  Local state fields for this page.
 
   List<DocumentReference> friendsList = [];

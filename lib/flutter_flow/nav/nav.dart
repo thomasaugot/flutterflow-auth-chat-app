@@ -87,14 +87,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AuthSignupWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Login',
-          path: '/auth2Login',
-          builder: (context, params) => const Auth2LoginWidget(),
+          name: 'auth_Login',
+          path: '/authLogin',
+          builder: (context, params) => const AuthLoginWidget(),
         ),
         FFRoute(
-          name: 'auth_2_ForgotPassword',
-          path: '/auth2ForgotPassword',
-          builder: (context, params) => const Auth2ForgotPasswordWidget(),
+          name: 'auth_ForgotPassword',
+          path: '/authForgotPassword',
+          builder: (context, params) => const AuthForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'auth_CreateProfile',
@@ -114,29 +114,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AuthEditProfileWidget(),
         ),
         FFRoute(
-          name: 'chat_2_Details',
-          path: '/chat2Details',
+          name: 'chat_Details',
+          path: '/chatDetails',
           asyncParams: {
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
-          builder: (context, params) => Chat2DetailsWidget(
+          builder: (context, params) => ChatDetailsWidget(
             chatRef: params.getParam('chatRef', ParamType.Document),
           ),
         ),
         FFRoute(
-          name: 'chat_2_main',
-          path: '/chat2Main',
+          name: 'chat_main',
+          path: '/chatMain',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'chat_2_main')
-              : const Chat2MainWidget(),
+              ? const NavBarPage(initialPage: 'chat_main')
+              : const ChatMainWidget(),
         ),
         FFRoute(
-          name: 'chat_2_InviteUsers',
-          path: '/chat2InviteUsers',
+          name: 'chat_InviteUsers',
+          path: '/chatInviteUsers',
           asyncParams: {
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
-          builder: (context, params) => Chat2InviteUsersWidget(
+          builder: (context, params) => ChatInviteUsersWidget(
             chatRef: params.getParam('chatRef', ParamType.Document),
           ),
         ),
@@ -345,13 +345,20 @@ class FFRoute {
                   key: state.pageKey,
                   child: child,
                   transitionDuration: transitionInfo.duration,
-                  transitionsBuilder: PageTransition(
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) =>
+                          PageTransition(
                     type: transitionInfo.transitionType,
                     duration: transitionInfo.duration,
                     reverseDuration: transitionInfo.duration,
                     alignment: transitionInfo.alignment,
                     child: child,
-                  ).transitionsBuilder,
+                  ).buildTransitions(
+                    context,
+                    animation,
+                    secondaryAnimation,
+                    child,
+                  ),
                 )
               : MaterialPage(key: state.pageKey, child: child);
         },

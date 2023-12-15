@@ -13,11 +13,11 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'chat2_invite_users_model.dart';
-export 'chat2_invite_users_model.dart';
+import 'chat_invite_users_model.dart';
+export 'chat_invite_users_model.dart';
 
-class Chat2InviteUsersWidget extends StatefulWidget {
-  const Chat2InviteUsersWidget({
+class ChatInviteUsersWidget extends StatefulWidget {
+  const ChatInviteUsersWidget({
     super.key,
     this.chatRef,
   });
@@ -25,18 +25,18 @@ class Chat2InviteUsersWidget extends StatefulWidget {
   final ChatsRecord? chatRef;
 
   @override
-  _Chat2InviteUsersWidgetState createState() => _Chat2InviteUsersWidgetState();
+  _ChatInviteUsersWidgetState createState() => _ChatInviteUsersWidgetState();
 }
 
-class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
-  late Chat2InviteUsersModel _model;
+class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
+  late ChatInviteUsersModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Chat2InviteUsersModel());
+    _model = createModel(context, () => ChatInviteUsersModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -309,9 +309,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 2.0, 2.0, 2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
@@ -460,7 +458,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                               context.pop();
                             }
                             context.pushNamed(
-                              'chat_2_Details',
+                              'chat_Details',
                               queryParameters: {
                                 'chatRef': serializeParam(
                                   _model.updatedChatThread,
@@ -513,7 +511,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                               context.pop();
                             }
                             context.pushNamed(
-                              'chat_2_Details',
+                              'chat_Details',
                               queryParameters: {
                                 'chatRef': serializeParam(
                                   _model.newChatThread,

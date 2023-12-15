@@ -8,25 +8,25 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'chat2_main_model.dart';
-export 'chat2_main_model.dart';
+import 'chat_main_model.dart';
+export 'chat_main_model.dart';
 
-class Chat2MainWidget extends StatefulWidget {
-  const Chat2MainWidget({super.key});
+class ChatMainWidget extends StatefulWidget {
+  const ChatMainWidget({super.key});
 
   @override
-  _Chat2MainWidgetState createState() => _Chat2MainWidgetState();
+  _ChatMainWidgetState createState() => _ChatMainWidgetState();
 }
 
-class _Chat2MainWidgetState extends State<Chat2MainWidget> {
-  late Chat2MainModel _model;
+class _ChatMainWidgetState extends State<ChatMainWidget> {
+  late ChatMainModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Chat2MainModel());
+    _model = createModel(context, () => ChatMainModel());
   }
 
   @override
@@ -86,7 +86,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'bjb0cp99' /* Your Chats */,
+                                  'bjb0cp99' /* Chats */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
@@ -107,7 +107,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 16.0, 8.0),
@@ -122,7 +122,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                   ),
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'chat_2_InviteUsers',
+                                      'chat_InviteUsers',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
@@ -137,7 +137,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderRadius: 20.0,
                                 borderWidth: 1.0,
@@ -209,8 +209,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                             final listViewChatsRecord =
                                 listViewChatsRecordList[listViewIndex];
                             return Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  3.0, 3.0, 3.0, 3.0),
+                              padding: const EdgeInsets.all(3.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -218,7 +217,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'chat_2_Details',
+                                    'chat_Details',
                                     queryParameters: {
                                       'chatRef': serializeParam(
                                         listViewChatsRecord,
@@ -304,7 +303,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              1.00, 1.00),
+                                                              1.0, 1.0),
                                                       child: Container(
                                                         width: 44.0,
                                                         height: 44.0,
@@ -328,12 +327,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      2.0,
-                                                                      2.0,
-                                                                      2.0),
+                                                              const EdgeInsets.all(
+                                                                  2.0),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
@@ -397,7 +392,15 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                               .start,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyLarge,
+                                                                          .bodyLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                            color:
+                                                                                const Color(0xFF232327),
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                          ),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -572,8 +575,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                             Align(
                                                               alignment:
                                                                   const AlignmentDirectional(
-                                                                      1.00,
-                                                                      1.00),
+                                                                      1.0, 1.0),
                                                               child: FutureBuilder<
                                                                   UsersRecord>(
                                                                 future: UsersRecord.getDocumentOnce(
@@ -639,11 +641,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                         if (containerUsersRecord.photoUrl !=
                                                                                 '') {
                                                                           return Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                2.0,
-                                                                                2.0,
-                                                                                2.0),
+                                                                            padding:
+                                                                                const EdgeInsets.all(2.0),
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(8.0),
@@ -662,11 +661,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                           );
                                                                         } else {
                                                                           return Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                2.0,
-                                                                                2.0,
-                                                                                2.0),
+                                                                            padding:
+                                                                                const EdgeInsets.all(2.0),
                                                                             child:
                                                                                 Container(
                                                                               width: 100.0,
@@ -675,18 +671,19 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              alignment: const AlignmentDirectional(0.00, 0.00),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   containerUsersRecord.displayName,
                                                                                   'A',
                                                                                 ).maybeHandleOverflow(maxChars: 1),
                                                                                 textAlign: TextAlign.center,
-                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
-                                                                                      fontWeight: FontWeight.bold,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
-                                                                                    ),
+                                                                                style: GoogleFonts.getFont(
+                                                                                  'Poppins',
+                                                                                  color: const Color(0xFF232327),
+                                                                                  fontWeight: FontWeight.bold,
+                                                                                  fontSize: 16.0,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -700,8 +697,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                             Align(
                                                               alignment:
                                                                   const AlignmentDirectional(
-                                                                      -1.00,
-                                                                      -1.00),
+                                                                      -1.0,
+                                                                      -1.0),
                                                               child: Container(
                                                                 width: 32.0,
                                                                 height: 32.0,
@@ -730,11 +727,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                     if (rowUsersRecord.photoUrl !=
                                                                             '') {
                                                                       return Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0),
+                                                                        padding:
+                                                                            const EdgeInsets.all(2.0),
                                                                         child:
                                                                             ClipRRect(
                                                                           borderRadius:
@@ -761,11 +755,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                       );
                                                                     } else {
                                                                       return Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0),
+                                                                        padding:
+                                                                            const EdgeInsets.all(2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -780,18 +771,19 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                                 BorderRadius.circular(8.0),
                                                                           ),
                                                                           alignment: const AlignmentDirectional(
-                                                                              0.00,
-                                                                              0.00),
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
-                                                                            valueOrDefault<String>(
-                                                                              rowUsersRecord.displayName,
-                                                                              'A',
-                                                                            ).maybeHandleOverflow(maxChars: 1),
+                                                                            FFLocalizations.of(context).getText(
+                                                                              'n1agorm9' /* Group Chat */,
+                                                                            ),
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                  color: const Color(0xFF232327),
+                                                                                  fontSize: 16.0,
                                                                                   fontWeight: FontWeight.bold,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                 ),
@@ -838,17 +830,24 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                             12.0,
                                                                             0.0),
                                                                     child: Text(
-                                                                      listViewChatsRecord
-                                                                          .users
-                                                                          .contains(
-                                                                              rowUsersRecord.reference)
-                                                                          .toString(),
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '18hrhwg6' /* Group Chat */,
+                                                                      ),
                                                                       textAlign:
                                                                           TextAlign
                                                                               .start,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      maxLines:
+                                                                          1,
+                                                                      style: GoogleFonts
+                                                                          .getFont(
+                                                                        'Poppins',
+                                                                        color: const Color(
+                                                                            0xFF232327),
+                                                                        fontSize:
+                                                                            16.0,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -977,7 +976,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.00, 0.00),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 40.0),
@@ -996,7 +995,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                               GoRouter.of(context).clearRedirectLocation();
 
                               context.pushNamedAuth(
-                                'auth_2_Login',
+                                'auth_Login',
                                 context.mounted,
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: const TransitionInfo(
@@ -1016,6 +1015,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleSmallFamily,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     decoration: TextDecoration.underline,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(

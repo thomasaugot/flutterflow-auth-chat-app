@@ -18,6 +18,8 @@ void main() async {
 
   await FlutterFlowTheme.initialize();
 
+  await FFLocalizations.initialize();
+
   runApp(const MyApp());
 }
 
@@ -33,7 +35,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale? _locale;
+  Locale? _locale = FFLocalizations.getStoredLocale();
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
   late Stream<BaseAuthUser> userStream;
@@ -67,6 +69,7 @@ class _MyAppState extends State<MyApp> {
 
   void setLocale(String language) {
     setState(() => _locale = createLocale(language));
+    FFLocalizations.storeLocale(language);
   }
 
   void setThemeMode(ThemeMode mode) => setState(() {
@@ -88,6 +91,7 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('en'),
         Locale('es'),
+        Locale('fr'),
       ],
       theme: ThemeData(
         brightness: Brightness.light,
@@ -115,7 +119,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'chat_2_main';
+  String _currentPageName = 'chat_main';
   late Widget? _currentPage;
 
   @override
@@ -129,7 +133,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'auth_Profile': const AuthProfileWidget(),
-      'chat_2_main': const Chat2MainWidget(),
+      'chat_main': const ChatMainWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 

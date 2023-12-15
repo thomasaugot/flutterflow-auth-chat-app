@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/languages/languages_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -88,7 +89,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.00, -1.00),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
             constraints: const BoxConstraints(
@@ -119,10 +120,9 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 10.0, 10.0, 10.0),
+                                  padding: const EdgeInsets.all(10.0),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
                                     borderRadius: 20.0,
@@ -134,7 +134,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                       size: 30.0,
                                     ),
                                     onPressed: () async {
-                                      context.pushNamed('chat_2_main');
+                                      context.pushNamed('chat_main');
                                     },
                                   ),
                                 ),
@@ -151,8 +151,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                30.0, 30.0, 30.0, 30.0),
+                            padding: const EdgeInsets.all(30.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => ClipRRect(
                                 borderRadius: BorderRadius.circular(50.0),
@@ -171,7 +170,7 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 30.0, 0.0, 0.0),
@@ -281,15 +280,13 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 12.0, 12.0, 12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.account_circle_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                  color: Color(0xFF232327),
                                   size: 24.0,
                                 ),
                                 Padding(
@@ -299,17 +296,26 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                     FFLocalizations.of(context).getText(
                                       'efr5o1dj' /* Edit Profile */,
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).labelLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLargeFamily,
+                                          color: const Color(0xFF232327),
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily),
+                                        ),
                                   ),
                                 ),
-                                Expanded(
+                                const Expanded(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.90, 0.00),
+                                    alignment: AlignmentDirectional(0.9, 0.0),
                                     child: Icon(
                                       Icons.arrow_forward_ios,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: Color(0xFF232327),
                                       size: 18.0,
                                     ),
                                   ),
@@ -361,15 +367,13 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 12.0, 12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.help_outline_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: Color(0xFF232327),
                                 size: 24.0,
                               ),
                               Padding(
@@ -379,17 +383,25 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                   FFLocalizations.of(context).getText(
                                     'ren1fqjg' /* Support */,
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).labelLarge,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
+                                        color: const Color(0xFF232327),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily),
+                                      ),
                                 ),
                               ),
-                              Expanded(
+                              const Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.90, 0.00),
+                                  alignment: AlignmentDirectional(0.9, 0.0),
                                   child: Icon(
                                     Icons.arrow_forward_ios,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: Color(0xFF232327),
                                     size: 18.0,
                                   ),
                                 ),
@@ -422,15 +434,13 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 12.0, 12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.privacy_tip_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: Color(0xFF232327),
                                 size: 24.0,
                               ),
                               Padding(
@@ -440,17 +450,25 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                                   FFLocalizations.of(context).getText(
                                     'jlq6fvtp' /* Terms of Service */,
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).labelLarge,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
+                                        color: const Color(0xFF232327),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily),
+                                      ),
                                 ),
                               ),
-                              Expanded(
+                              const Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.90, 0.00),
+                                  alignment: AlignmentDirectional(0.9, 0.0),
                                   child: Icon(
                                     Icons.arrow_forward_ios,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: Color(0xFF232327),
                                     size: 18.0,
                                   ),
                                 ),
@@ -460,8 +478,17 @@ class _AuthProfileWidgetState extends State<AuthProfileWidget>
                         ),
                       ),
                     ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+                      child: wrapWithModel(
+                        model: _model.languagesModel,
+                        updateCallback: () => setState(() {}),
+                        child: const LanguagesWidget(),
+                      ),
+                    ),
                     Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),

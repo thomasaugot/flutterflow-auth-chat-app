@@ -107,8 +107,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                               builder: (context) {
                                 if (otherUserUsersRecord.photoUrl != '') {
                                   return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        2.0, 2.0, 2.0, 2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: CachedNetworkImage(
@@ -219,8 +218,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 8.0, 8.0, 8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -337,7 +335,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
@@ -349,7 +347,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                             SelectionArea(
                                 child: AutoSizeText(
                               FFLocalizations.of(context).getText(
-                                'xlgar6ld' /* Me  */,
+                                '7i1dwsbz' /* Me  */,
                               ),
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
@@ -409,8 +407,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.end,

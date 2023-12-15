@@ -9,19 +9,19 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'auth2_login_model.dart';
-export 'auth2_login_model.dart';
+import 'auth_login_model.dart';
+export 'auth_login_model.dart';
 
-class Auth2LoginWidget extends StatefulWidget {
-  const Auth2LoginWidget({super.key});
+class AuthLoginWidget extends StatefulWidget {
+  const AuthLoginWidget({super.key});
 
   @override
-  _Auth2LoginWidgetState createState() => _Auth2LoginWidgetState();
+  _AuthLoginWidgetState createState() => _AuthLoginWidgetState();
 }
 
-class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
+class _AuthLoginWidgetState extends State<AuthLoginWidget>
     with TickerProviderStateMixin {
-  late Auth2LoginModel _model;
+  late AuthLoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -65,7 +65,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth2LoginModel());
+    _model = createModel(context, () => AuthLoginModel());
 
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -100,7 +100,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.00, 0.00),
+          alignment: const AlignmentDirectional(0.0, 0.0),
           child: Container(
             height: double.infinity,
             decoration: BoxDecoration(
@@ -120,11 +120,11 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                 end: const AlignmentDirectional(-0.87, 1.0),
               ),
             ),
-            alignment: const AlignmentDirectional(0.00, -1.00),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Stack(
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -135,7 +135,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                           children: [
                             Flexible(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 0.0),
@@ -146,7 +146,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       width: 200.0,
                                       height: 200.0,
                                       fit: BoxFit.cover,
-                                      alignment: const Alignment(0.00, 0.00),
+                                      alignment: const Alignment(0.0, 0.0),
                                     ),
                                   ),
                                 ),
@@ -155,8 +155,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Container(
                             width: double.infinity,
                             constraints: const BoxConstraints(
@@ -179,10 +178,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    32.0, 32.0, 32.0, 32.0),
+                                padding: const EdgeInsets.all(32.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -241,14 +239,18 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           autofillHints: const [AutofillHints.email],
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'jiku9boa' /* Email */,
-                                            ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelLarge,
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'j8zhu1f4' /* Email */,
+                                            ),
+                                            hintStyle: GoogleFonts.getFont(
+                                              'Poppins',
+                                              color: const Color(0xFFA4A3AD),
+                                            ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
@@ -292,7 +294,19 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                             fillColor: const Color(0xE1FFFFFF),
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .titleMedium,
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                color: const Color(0xFF232327),
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
                                           keyboardType:
                                               TextInputType.emailAddress,
                                           cursorColor:
@@ -319,14 +333,30 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           obscureText:
                                               !_model.passwordVisibility,
                                           decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'uuf61ori' /* Password */,
-                                            ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelLarge,
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '3gj64asq' /* Password */,
+                                            ),
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMediumFamily,
+                                                      color: const Color(0xFFA4A3AD),
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily),
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
@@ -389,7 +419,19 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .titleMedium,
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                color: const Color(0xFF232327),
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
                                           cursorColor:
                                               FlutterFlowTheme.of(context)
                                                   .primary,
@@ -418,7 +460,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           }
 
                                           context.pushNamedAuth(
-                                            'chat_2_main',
+                                            'chat_main',
                                             context.mounted,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
@@ -472,8 +514,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       ),
                                     ),
                                     Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.00, 0.00),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 24.0),
@@ -514,7 +555,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           }
 
                                           context.goNamedAuth(
-                                              'chat_2_main', context.mounted);
+                                              'chat_main', context.mounted);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -577,8 +618,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                                   return;
                                                 }
 
-                                                context.goNamedAuth(
-                                                    'chat_2_main',
+                                                context.goNamedAuth('chat_main',
                                                     context.mounted);
                                               },
                                               text: FFLocalizations.of(context)
@@ -636,8 +676,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
 
                                     // You will have to add an action on this rich text to go to your login page.
                                     Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.00, 0.00),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
@@ -721,7 +760,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                            'auth_2_ForgotPassword',
+                                            'auth_ForgotPassword',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   const TransitionInfo(
@@ -766,10 +805,17 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                               ),
                                           elevation: 0.0,
                                           borderSide: const BorderSide(
+                                            color: Colors.transparent,
                                             width: 2.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
+                                          hoverColor: Colors.transparent,
+                                          hoverBorderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 2.0,
+                                          ),
+                                          hoverTextColor: Colors.transparent,
                                         ),
                                       ),
                                     ),

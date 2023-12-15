@@ -8,20 +8,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'auth2_forgot_password_model.dart';
-export 'auth2_forgot_password_model.dart';
+import 'auth_forgot_password_model.dart';
+export 'auth_forgot_password_model.dart';
 
-class Auth2ForgotPasswordWidget extends StatefulWidget {
-  const Auth2ForgotPasswordWidget({super.key});
+class AuthForgotPasswordWidget extends StatefulWidget {
+  const AuthForgotPasswordWidget({super.key});
 
   @override
-  _Auth2ForgotPasswordWidgetState createState() =>
-      _Auth2ForgotPasswordWidgetState();
+  _AuthForgotPasswordWidgetState createState() =>
+      _AuthForgotPasswordWidgetState();
 }
 
-class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
+class _AuthForgotPasswordWidgetState extends State<AuthForgotPasswordWidget>
     with TickerProviderStateMixin {
-  late Auth2ForgotPasswordModel _model;
+  late AuthForgotPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -65,7 +65,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth2ForgotPasswordModel());
+    _model = createModel(context, () => AuthForgotPasswordModel());
 
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -115,7 +115,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
               end: const AlignmentDirectional(-0.87, 1.0),
             ),
           ),
-          alignment: const AlignmentDirectional(0.00, -1.00),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -130,10 +130,9 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 10.0),
+                              padding: const EdgeInsets.all(10.0),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
                                 borderRadius: 20.0,
@@ -180,7 +179,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             32.0, 20.0, 32.0, 32.0),
