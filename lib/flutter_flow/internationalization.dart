@@ -158,6 +158,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Continuar con Apple',
       'fr': 'Continuer avec Apple',
     },
+    '4qsca0pe': {
+      'en': 'Continue with Facebook',
+      'es': 'Continuar con Apple',
+      'fr': 'Continuer avec Apple',
+    },
     'os3j1pin': {
       'en': 'Already have an account? ',
       'es': '¿Ya tienes una cuenta?',
@@ -224,6 +229,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mymw72vz': {
       'en': 'Continue with Apple',
+      'es': 'Continuar con Apple',
+      'fr': 'Continuer avec Apple',
+    },
+    'xa3ovsnk': {
+      'en': 'Continue with Facebook',
       'es': 'Continuar con Apple',
       'fr': 'Continuer avec Apple',
     },
